@@ -1,0 +1,15 @@
+[user]
+	name = Bo Frederiksen
+	email = bofrede@bofrede.dk
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+[core]
+	editor = mate -w
+	pager =
+[github]
+	user = bofrede
+	token = 9f4db43a089fb93b629168ef3a3bc08d
+[alias]
+	wtf = !git-wtf
