@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+# encoding: UTF-8
+require "fileutils"
+
+home_dir = Dir.home
+current_dir = Dir.pwd
+puts "Installing dotfiles …"
+dotfiles = %w(bash_aliases bash_profile gemrc gitconfig irbrc)
+for dotfile in dotfiles do
+  path = "#{home_dir}/.#{dotfile}"
+  real = "#{current_dir}/#{dotfile}"
+  if File.exists?(path)
+    puts "  #{path} already exists as a #{File.symlink?(path) ? 'symlink' : 'file'}."
+  else
+    puts "  Creating symlink for #{real} at #{path}"
+    File.symlink(real, path)
+  end
+end
