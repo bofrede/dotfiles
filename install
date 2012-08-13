@@ -2,7 +2,7 @@
 # encoding: UTF-8
 require "fileutils"
 
-home_dir = Dir.home
+home_dir = File.expand_path '~'
 current_dir = Dir.pwd
 puts "Installing dotfiles …"
 dotfiles = %w(bash_aliases bash_profile gemrc gitconfig irbrc)
