@@ -1,0 +1,18 @@
+Host github.com
+  User git
+
+Host linode
+  Hostname linode.bofrede.dk
+#  IdentitiesOnly yes
+
+Host hq
+  Hostname hq.bofrede.dk
+
+Host *.example.com
+
+Host *
+  User bofrede
+  IdentityFile ~/.ssh/id_rsa
+  ForwardAgent yes
+
+# http://linux.die.net/man/5/ssh_config
