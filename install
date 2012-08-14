@@ -5,7 +5,7 @@ require "fileutils"
 home_dir = File.expand_path '~'
 current_dir = Dir.pwd
 puts "Installing dotfiles …"
-dotfiles = %w(bash_aliases bash_profile gemrc gitconfig irbrc)
+dotfiles = %w(bash_aliases bash_profile gemrc gitconfig irbrc ssh/config)
 for dotfile in dotfiles do
   path = "#{home_dir}/.#{dotfile}"
   real = "#{current_dir}/#{dotfile}"
