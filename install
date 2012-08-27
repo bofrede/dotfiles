@@ -5,10 +5,21 @@ require "fileutils"
 home_dir = File.expand_path '~'
 current_dir = Dir.pwd
 puts "Installing dotfiles …"
-dotfiles = %w(bash_aliases bash_profile gemrc gitconfig irbrc ssh/config)
-for dotfile in dotfiles do
-  path = "#{home_dir}/.#{dotfile}"
-  real = "#{current_dir}/#{dotfile}"
+dot_files = %w(bash_aliases bash_profile gemrc gitconfig irbrc ssh/config)
+for dot_file in dot_files do
+  path = "#{home_dir}/.#{dot_file}"
+  real = "#{current_dir}/#{dot_file}"
+  if File.exists?(path)
+    puts "  #{path} already exists as a #{File.symlink?(path) ? 'symlink' : 'file'}."
+  else
+    puts "  Creating symlink for #{real} at #{path}"
+    File.symlink(real, path)
+  end
+end
+bin_files = %w{ginit git-create-server-repo git-wtf}
+for bin_file in bin_files do
+  path = "#{home_dir}/bin/#{bin_file}"
+  real = "#{current_dir}/bin/#{bin_file}"
   if File.exists?(path)
     puts "  #{path} already exists as a #{File.symlink?(path) ? 'symlink' : 'file'}."
   else

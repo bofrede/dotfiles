@@ -1,0 +1,17 @@
+#!/usr/bin/env bash 
+git init .
+
+cat <<EOF > .gitignore
+.DS_Store
+Thumbs.db
+log/*.log
+tmp/**/*
+config/database.yml
+db/*.sqlite3
+coverage
+doc/app/*
+EOF
+
+find . -type d -empty -exec touch {}/.gitkeep \;
+git add .
+git commit -m "Initial import."

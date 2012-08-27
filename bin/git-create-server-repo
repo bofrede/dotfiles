@@ -1,0 +1,1 @@
+ssh git@www.bofrede.dk 'mkdir -p ~/'$1'.git && cd ~/'$1'.git && git --bare init'
