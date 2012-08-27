@@ -3,6 +3,7 @@ alias ...='cd ../..'
 alias ..='cd ..'
 alias la='ls -laG'
 alias ll='ls -lG'
+alias tlf='tail -f'
 alias witch='echo "which ?"'
 
 # Rails
