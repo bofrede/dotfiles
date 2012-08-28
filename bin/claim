@@ -1,0 +1,14 @@
+#!/bin/sh
+if [ "$1" ]
+then
+  hostname=$1
+  rsync -av ~/Dropbox/server-home/ $hostname:~/
+  ssh $hostname "cat .ssh/id_rsa.pub >> .ssh/authorized_keys && chmod 0644 .ssh/authorized_keys"
+  # cat ~/.ssh/id_rsa.pub | ssh $hostname "mkdir -m 0700 -p .ssh && cat - >> .ssh/authorized_keys && chmod 0622 .ssh/authorized_keys"
+  ssh $hostname "chmod 700 ~/.ssh"
+  ssh $hostname "rm -f .emacs* && rm -rf .mozilla && rm -f .zshrc"
+else
+  this_executable=`echo "$0"|rev|cut -d "/" -f1|rev`
+  echo "This script will help you move in, on a new Linux server. Setting up SSH PPK, Bash aliases and deleting redundant files from your home folder.\n"
+  echo "Usage: $this_executable hostname"
+fi

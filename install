@@ -16,7 +16,7 @@ for dot_file in dot_files do
     File.symlink(real, path)
   end
 end
-bin_files = %w{ginit git-create-server-repo git-wtf}
+bin_files = %w{ginit git-create-server-repo git-wtf claim}
 for bin_file in bin_files do
   path = "#{home_dir}/bin/#{bin_file}"
   real = "#{current_dir}/bin/#{bin_file}"
