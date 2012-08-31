@@ -2,7 +2,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export EDITOR='subl -w'
+export EDITOR='mate -w'
 export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH" 
 export PS1='\u@\h:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\n>'
 
