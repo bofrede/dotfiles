@@ -33,6 +33,7 @@ alias gh='github'
 alias gk='gitk &'
 alias gl='git pull'
 alias glom='git pull origin master'
+alias glog='git log'
 alias gm="git merge"
 alias gmt="git mergetool"
 alias gp='git push'
