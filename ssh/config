@@ -5,6 +5,10 @@ Host linode
   Hostname linode.bofrede.dk
 #  IdentitiesOnly yes
 
+Host digitalocean
+  User root
+  Hostname digitalocean.bofrede.dk
+
 Host hq
   Hostname hq.bofrede.dk
 
