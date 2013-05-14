@@ -7,17 +7,20 @@ alias tlf='tail -f'
 alias witch='echo "which ?"'
 
 # Rails
+alias devlog='tail -f log/development.log'
 alias r='rails'
 alias rdbm='rake db:migrate'
 alias rdbr='rake db:rollback'
 alias rdbtp='rake db:test:prepare'
 alias ri='ri -f ansi'
 alias rr='rake routes'
-alias sc='ruby script/console'
-alias sd='ruby script/destroy'
-alias sg='ruby script/generate'
-alias ss='ruby script/server'
+alias rc='rails console'
+alias rd='rails destroy'
+alias rg='rails generate'
+alias rs='rails server'
 alias ttr='touch tmp/restart.txt'
+# View the standard out (puts) from any pow app
+alias powlog='tail -f ~/Library/Logs/Pow/apps/*'
 
 # Git
 alias g='git'
@@ -33,6 +36,7 @@ alias gh='github'
 alias gk='gitk &'
 alias gl='git pull'
 alias glom='git pull origin master'
+alias glog='git log'
 alias gm="git merge"
 alias gmt="git mergetool"
 alias gp='git push'
