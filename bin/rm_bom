@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+if ARGV.length == 0
+  puts 'Remove Byte Order Mark (BOM) from UTF-8 encoded files.'
+  puts "Usage: #{$0} <filename>"
+else
+  data = File.read(ARGV.first).sub(/\A\xef\xbb\xbf/,'')
+  File.open(ARGV.first, 'w:utf-8') do |f|
+    f.write data
+  end
+end
