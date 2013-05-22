@@ -17,7 +17,7 @@ for dot_file in dot_files do
   end
 end
 FileUtils.mkdir_p "#{home_dir}/bin"
-bin_files = %w{ginit git-create-server-repo git-wtf claim}
+bin_files = %w{ginit git-create-server-repo git-wtf claim rm_bom}
 for bin_file in bin_files do
   path = "#{home_dir}/bin/#{bin_file}"
   real = "#{current_dir}/bin/#{bin_file}"
