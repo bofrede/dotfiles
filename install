@@ -2,29 +2,33 @@
 # encoding: UTF-8
 require "fileutils"
 
-home_dir = File.expand_path '~'
-current_dir = Dir.pwd
-puts "Installing dotfiles …"
-dot_files = %w(bash_aliases bash_profile gemrc gitconfig irbrc ssh/config)
-for dot_file in dot_files do
-  path = "#{home_dir}/.#{dot_file}"
-  real = "#{current_dir}/#{dot_file}"
-  if File.exists?(path)
-    puts "  #{path} already exists as a #{File.symlink?(path) ? 'symlink' : 'file'}."
-  else
-    puts "  Creating symlink for #{real} at #{path}"
-    File.symlink(real, path)
+begin
+  home_dir = File.expand_path '~'
+  current_dir = Dir.pwd
+  puts "Installing dotfiles …"
+  dot_files = %w(bash_aliases bash_profile gemrc gitconfig irbrc ssh/config)
+  for dot_file in dot_files do
+    path = "#{home_dir}/.#{dot_file}"
+    real = "#{current_dir}/#{dot_file}"
+    if File.exists?(path)
+      puts "  #{path} already exists as a #{File.symlink?(path) ? 'symlink' : 'file'}."
+    else
+      puts "  Creating symlink for #{real} at #{path}"
+      File.symlink(real, path)
+    end
   end
-end
-FileUtils.mkdir_p "#{home_dir}/bin"
-bin_files = %w{ginit git-create-server-repo git-wtf claim rm_bom}
-for bin_file in bin_files do
-  path = "#{home_dir}/bin/#{bin_file}"
-  real = "#{current_dir}/bin/#{bin_file}"
-  if File.exists?(path)
-    puts "  #{path} already exists as a #{File.symlink?(path) ? 'symlink' : 'file'}."
-  else
-    puts "  Creating symlink for #{real} at #{path}"
-    File.symlink(real, path)
+  FileUtils.mkdir_p "#{home_dir}/bin"
+  bin_files = %w{ginit git-create-server-repo git-wtf claim rm_bom}
+  for bin_file in bin_files do
+    path = "#{home_dir}/bin/#{bin_file}"
+    real = "#{current_dir}/bin/#{bin_file}"
+    if File.exists?(path)
+      puts "  #{path} already exists as a #{File.symlink?(path) ? 'symlink' : 'file'}."
+    else
+      puts "  Creating symlink for #{real} at #{path}"
+      File.symlink(real, path)
+    end
   end
+rescue NotImplementedError => nie
+  STDERR.puts nie.message
 end
