@@ -18,7 +18,7 @@ begin
     end
   end
   FileUtils.mkdir_p "#{home_dir}/bin"
-  bin_files = %w{ginit git-create-server-repo git-wtf claim rm_bom file2base64}
+  bin_files = %w{ginit git-create-server-repo git-wtf claim rm_bom file_to_base64 base64_to_file}
   for bin_file in bin_files do
     path = "#{home_dir}/bin/#{bin_file}"
     real = "#{current_dir}/bin/#{bin_file}"
