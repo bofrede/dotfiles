@@ -1,6 +1,7 @@
 # General
 alias ...='cd ../..'
 alias ..='cd ..'
+alias ls='ls --color=auto'
 alias la='ls -laG'
 alias ll='ls -lG'
 alias tlf='tail -f'
