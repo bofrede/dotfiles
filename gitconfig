@@ -8,6 +8,7 @@
 [core]
 	editor = mate -w
 	pager = less
+	excludesfile = ~/.gitignore
 [github]
 	user = bofrede
 	token = 9f4db43a089fb93b629168ef3a3bc08d
