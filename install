@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby
 # encoding: UTF-8
-require "fileutils"
+# rubocop:disable LineLength
+require 'fileutils'
 
 begin
   home_dir = File.expand_path '~'
   current_dir = Dir.pwd
-  puts "Installing dotfiles …"
+  puts 'Installing dotfiles …'
   dot_files = %w(bash_aliases bash_profile gemrc gitconfig gitignore irbrc ssh/config)
-  for dot_file in dot_files do
+  dot_files.each do |dot_file|
     path = "#{home_dir}/.#{dot_file}"
     real = "#{current_dir}/#{dot_file}"
     if File.exists?(path)
@@ -19,7 +20,7 @@ begin
   end
   FileUtils.mkdir_p "#{home_dir}/bin"
   bin_files = %w{ginit git-create-server-repo git-wtf claim rm_bom file_to_base64 base64_to_file}
-  for bin_file in bin_files do
+  bin_files.each do |bin_file|
     path = "#{home_dir}/bin/#{bin_file}"
     real = "#{current_dir}/bin/#{bin_file}"
     if File.exists?(path)
