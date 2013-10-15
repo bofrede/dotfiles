@@ -8,10 +8,13 @@ Host linode
 Host hq
   Hostname hq.bofrede.dk
 
+Host 37.139.13.105
+  User root
+
 Host *.example.com
 
 Host *
-  User bofrede
+#  User bofrede
   IdentityFile ~/.ssh/id_rsa
   ForwardAgent yes
 
