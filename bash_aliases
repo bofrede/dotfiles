@@ -41,7 +41,6 @@ alias gm="git merge"
 alias gmt="git mergetool"
 alias gp='git push'
 alias gphm='git push heroku master'
-alias gpom='git push origin master'
 alias gpl='git pull --rebase'
 alias gsi='git submodule init'
 alias gst='git status'
