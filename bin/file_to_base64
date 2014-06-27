@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "base64"
+require 'base64'
 
 if ARGV.length == 1
   content = File.binread(ARGV[0])
