@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+#
+# K.Kodama 2002-09-30
+# This program is distributed freely
+# in the sense of GNU General Public License or ruby's.
+# http://www.math.kobe-u.ac.jp/~kodama/tips-ruby-loc.html
+
+=begin
+Lines Of Code(LOC) counter for Ruby.
+Usage: ruby rubyloc.rb < ruby_script.rb
+=end
+require 'English'
+
+loc = 0
+defs = 0
+word = 0
+comment = false
+
+while gets
+  comment = true if $LAST_READ_LINE =~ /^=begin/
+  unless comment
+    l = $LAST_READ_LINE.gsub(/^/, ' ').gsub(/$/, ' ').gsub(/#.*/, ' ').gsub(/;/, " \n ").gsub(/\t/, ' ')
+    l = l.gsub(/[^A-Za-z0-9_\n]/, ' ').gsub(/ [0-9]+ /, ' ')
+    # key words
+    l = l.gsub(/ begin /, " \n ").gsub(/ break /, " \n ")
+    l = l.gsub(/ case /, " \n ").gsub(/ do /, " \n ")
+    l = l.gsub(/ else /, " \n ").gsub(/ elsif /, " \n elsif ").gsub(/ end /, " \n ")
+    l = l.gsub(/ for /, " \n ").gsub(/ if /, " \n if ").gsub(/ next /, " \n ")
+    l = l.gsub(/ redo /, " \n ").gsub(/ rescue /, " \n rescue ")
+    l = l.gsub(/ retry /, " \n ").gsub(/ return /, " \n ")
+    l = l.gsub(/ then /, " \n ").gsub(/ unless /, " \n ").gsub(/ until /, " \n ")
+    l = l.gsub(/ when /, " \n ").gsub(/ while /, " \n ")
+    # space
+    l = l.gsub(/ +/, ' ').gsub(/^ *\n/, '')
+    print l
+    if l != ''
+      loc += l.split(/\n/).size
+      defs += 1 if l =~ /^ *def /
+      word += l.split(/ /).size
+    end
+  end
+  comment = false if $LAST_READ_LINE =~ /^=end/
+end
+puts "loc: #{loc}, def: #{defs}\n"
