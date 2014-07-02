@@ -30,6 +30,7 @@ alias gba='git branch -a'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gco="git checkout"
+alias gcob="git checkout -b"
 alias gd='git diff --ignore-space-change'
 # alias gd='git diff | $EDITOR'
 alias gh='github'
