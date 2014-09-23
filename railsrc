@@ -1,0 +1,1 @@
+--skip-bundle --skip-test-unit --skip-sprockets -d mysql --template ~/code/bofrede-template.rb
