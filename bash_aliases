@@ -7,6 +7,7 @@ alias tlf='tail -f'
 alias witch='echo "which ?"'
 
 # Rails
+alias be='bundle exec'
 alias devlog='tail -f log/development.log'
 alias r='rails'
 alias rdbm='rake db:migrate'
