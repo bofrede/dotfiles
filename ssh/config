@@ -4,18 +4,27 @@ Host github.com
 Host linode
   Hostname linode.bofrede.dk
 #  IdentitiesOnly yes
+  RemoteForward 52698 localhost:52698
 
 Host hq
   Hostname hq.bofrede.dk
+  RemoteForward 52698 localhost:52698
+
+Host online.digiplay.pro
+  User root
 
 Host 37.139.13.105
   User root
 
 Host *.example.com
 
+Host 172.17.7.5*
+  User pi
+
 Host *
 #  User bofrede
   IdentityFile ~/.ssh/id_rsa
   ForwardAgent yes
+  ServerAliveInterval 100
 
 # http://linux.die.net/man/5/ssh_config
