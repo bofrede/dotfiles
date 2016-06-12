@@ -8,7 +8,7 @@ begin
   current_dir = Dir.pwd
   puts 'Installing dotfiles …'
   FileUtils.mkdir_p "#{home_dir}/.ssh"
-  dot_files = %w(bash_aliases bash_profile gemrc gitconfig gitignore irbrc railsrc ssh/config)
+  dot_files = %w(bash_aliases bash_profile gemrc gitconfig gitignore irbrc railsrc svgo.yml ssh/config)
   dot_files.each do |dot_file|
     path = "#{home_dir}/.#{dot_file}"
     real = "#{current_dir}/#{dot_file}"
