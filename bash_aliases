@@ -1,4 +1,5 @@
 # General
+alias ....='cd ../../..'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias la='ls -laG'
@@ -18,7 +19,7 @@ alias rr='rake routes'
 alias rc='rails console'
 alias rd='rails destroy'
 alias rg='rails generate'
-alias rs='rails server'
+alias rs='rails server -b 0.0.0.0'
 alias ttr='touch tmp/restart.txt'
 # View the standard out (puts) from any pow app
 alias powlog='tail -f ~/Library/Logs/Pow/apps/*'
