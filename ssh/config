@@ -21,6 +21,9 @@ Host *.example.com
 Host 172.17.7.5*
   User pi
 
+Host *.crd.dk
+  User bof
+
 Host *
 #  User bofrede
   IdentityFile ~/.ssh/id_rsa
