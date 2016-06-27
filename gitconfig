@@ -6,9 +6,11 @@
 	branch = auto
 	diff = auto
 [core]
-	editor = mate -w
+	editor = subl -w
 	pager = less
 	excludesfile = /Users/bofrede/.gitignore
+	precomposeunicode = true
+	quotepath = false
 [github]
 	user = bofrede
 	token = 9f4db43a089fb93b629168ef3a3bc08d
