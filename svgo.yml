@@ -27,7 +27,13 @@ plugins:
   - moveElemsAttrsToGroup: true
   - moveGroupAttrsToElems: false
   - collapseGroups: true
-  - convertPathData: true
+  - convertPathData: true # Round/rewrite paths
+  - floatPrecision: 2
+  - straightCurves: true
+  - lineShorthands: true
+  - curveSmoothShorthands: true
+  - applyTransforms: true
+  - applyTransformsStroked: true #
   - convertTransform: true
   - removeEmptyAttrs: true
   - removeEmptyContainers: true
