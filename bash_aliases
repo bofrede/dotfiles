@@ -6,6 +6,7 @@ alias la='ls -laG'
 alias ll='ls -lG'
 alias tlf='tail -f'
 alias witch='echo "which ?"'
+alias headers='curl -D - -o /dev/null'
 
 # Rails
 alias be='bundle exec'
