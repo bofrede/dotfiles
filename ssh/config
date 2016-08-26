@@ -13,7 +13,7 @@ Host 37.139.13.105
 
 Host *.example.com
 
-Host 172.17.7.5* pi
+Host 172.17.7.5* pi pi.local
   User pi
 
 Host *
