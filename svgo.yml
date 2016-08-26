@@ -1,57 +1,57 @@
 multipass: true
-# full: true
+#  full: true
 
 plugins:
-  - removeDoctype: true
-  - removeXMLProcInst: true
-  - removeComments: true
-  - removeMetadata: true
-  - removeEditorsNSData: true
-  - cleanupAttrs: true
-  - minifyStyles: true
-  - convertStyleToAttrs: true
-  - cleanupIDs: true
-  - removeRasterImages: false
-  - removeUselessDefs: true
-  - cleanupNumericValues: true
-  - cleanupListOfValues: true
-  - convertColors: true
-  - removeUnknownsAndDefaults: true
-  - removeNonInheritableGroupAttrs: true
-  - removeUselessStrokeAndFill: true
-  - removeViewBox: false
-  - cleanupEnableBackground: true
-  - removeHiddenElems: true
-  - removeEmptyText: true
-  - convertShapeToPath: false
-  - moveElemsAttrsToGroup: true
-  - moveGroupAttrsToElems: false
-  - collapseGroups: true
-  - convertPathData: true # Round/rewrite paths
-  - floatPrecision: 2
-  - straightCurves: true
-  - lineShorthands: true
-  - curveSmoothShorthands: true
-  - applyTransforms: true
-  - applyTransformsStroked: true #
-  - convertTransform: true
-  - removeEmptyAttrs: true
-  - removeEmptyContainers: true
-  - mergePaths: false
-  - removeUnusedNS: true
-  - transformsWithOnePath: true
-  - sortAttrs: true
-  - removeTitle: true
-  - removeDesc: true
-  - removeDimensions: true
-  - removeAttrs: true
-  - addClassesToSVGElement: false
-  - removeStyleElement: false
+  # - addClassesToSVGElement           # adds classnames to an outer <svg> element
+  - applyTransforms                  # ?
+  - applyTransformsStroked           # ?
+  - cleanupAttrs                     # cleanups attributes from newlines, trailing and repeating spaces
+  - cleanupEnableBackground          # remove or cleanup enable-background attribute when possible
+  - cleanupIDs                       # removes unused IDs and minifies used
+  - cleanupListOfValues              # rounds list of values to the fixed precision
+  - cleanupNumericValues             # rounds numeric values to the fixed precision, removes default ‘px’ units
+  - collapseGroups                   # collapses useless groups
+  - convertColors                    # converts colors: rgb() to #rrggbb and #rrggbb to #rgb
+  - convertPathData                  # optimizes path data: writes in shorter form, applies transformations
+  # - convertShapeToPath               # converts basic shapes to more compact path form
+  - convertStyleToAttrs              # converts style to attributes
+  - convertTransform                 # collapses multiple transformations and optimizes it
+  - curveSmoothShorthands            # ?
+  - floatPrecision: 2                # ?
+  - lineShorthands                   # ?
+  # - mergePaths                       # merges multiple paths in one if possible
+  - minifyStyles                     # minifies existing styles in svg
+  - moveElemsAttrsToGroup            # moves elements attributes to the existing group wrapper
+  - moveGroupAttrsToElems            # moves some group attributes to the content elements
+  # - removeAttrs: false               # removes specified attributes
+  - removeComments                   # removes comments
+  - removeDesc                       # removes <desc> (only non-meaningful by default)
+  - removeDimensions                 # removes width and height in presence of viewBox
+  - removeDoctype                    # removes doctype declaration
+  - removeEditorsNSData              # removes editors namespaces, elements and attributes
+  - removeEmptyAttrs                 # removes empty attributes
+  - removeEmptyContainers            # removes empty container elements
+  - removeEmptyText                  # removes empty <text> elements
+  - removeHiddenElems                # removes hidden elements (zero sized, with absent attributes)
+  - removeMetadata                   # removes <metadata>
+  - removeNonInheritableGroupAttrs   # removes non-inheritable group’s presentational attributes
+  # - removeRasterImages               # removes raster images (disabled by default)
+  # - removeStyleElement               # removes <style> element (disabled by default)
+  - removeTitle                      # removes <title> (disabled by default)
+  - removeUnknownsAndDefaults        # removes unknown elements content and attributes, removes attrs with default values
+  - removeUnusedNS                   # removes unused namespaces declaration
+  - removeUselessDefs                # removes elements in <defs> without id
+  - removeUselessStrokeAndFill       # removes useless stroke and fill attributes
+  # - removeViewBox                    # removes viewBox attribute when possible (disabled by default)
+  - removeXMLProcInst                # removes XML processing instructions
+  - sortAttrs                        # sorts element attributes (disabled by default)
+  - straightCurves                   # ?
+  - transformsWithOnePath            # performs a set of operations on SVG with one path inside (disabled by default)
 
 # configure the indent (default 4 spaces) used by `--pretty` here:
 #
 # @see https://github.com/svg/svgo/blob/master/lib/svgo/js2svg.js#L6 for more config options
 #
 js2svg:
- pretty: true
- indent: '	'
+  pretty: true
+  indent: '	'
