@@ -7,6 +7,7 @@ alias ll='ls -lG'
 alias tlf='tail -f'
 alias witch='echo "which ?"'
 alias headers='curl -s -S --user-agent "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko" -D - -o /dev/null'
+alias obd='minicom -c on -b 38400 -D /dev/cu.OBDII-SPP'
 
 # Rails
 alias be='bundle exec'
