@@ -3,31 +3,31 @@ multipass: true
 
 plugins:
   # - addClassesToSVGElement           # adds classnames to an outer <svg> element
-  - applyTransforms                  # ?
+  - applyTransforms: true                  # ?
   - applyTransformsStroked           # ?
   - cleanupAttrs                     # cleanups attributes from newlines, trailing and repeating spaces
   - cleanupEnableBackground          # remove or cleanup enable-background attribute when possible
-  - cleanupIDs                       # removes unused IDs and minifies used
+  - cleanupIDs: true                 # removes unused IDs and minifies used
   - cleanupListOfValues              # rounds list of values to the fixed precision
   - cleanupNumericValues             # rounds numeric values to the fixed precision, removes default ‘px’ units
   - collapseGroups                   # collapses useless groups
   - convertColors                    # converts colors: rgb() to #rrggbb and #rrggbb to #rgb
-  - convertPathData                  # optimizes path data: writes in shorter form, applies transformations
-  # - convertShapeToPath               # converts basic shapes to more compact path form
+  - convertPathData: true            # optimizes path data: writes in shorter form, applies transformations
+  - convertShapeToPath: false        # converts basic shapes to more compact path form
   - convertStyleToAttrs              # converts style to attributes
   - convertTransform                 # collapses multiple transformations and optimizes it
   - curveSmoothShorthands            # ?
   - floatPrecision: 2                # ?
   - lineShorthands                   # ?
-  # - mergePaths                       # merges multiple paths in one if possible
+  - mergePaths: false                # merges multiple paths in one if possible
   - minifyStyles                     # minifies existing styles in svg
   - moveElemsAttrsToGroup            # moves elements attributes to the existing group wrapper
   - moveGroupAttrsToElems            # moves some group attributes to the content elements
   # - removeAttrs: false               # removes specified attributes
   - removeComments                   # removes comments
   - removeDesc                       # removes <desc> (only non-meaningful by default)
-  - removeDimensions                 # removes width and height in presence of viewBox
-  - removeDoctype                    # removes doctype declaration
+  - removeDimensions: true           # removes width and height in presence of viewBox
+  - removeDoctype: true              # removes doctype declaration
   - removeEditorsNSData              # removes editors namespaces, elements and attributes
   - removeEmptyAttrs                 # removes empty attributes
   - removeEmptyContainers            # removes empty container elements
