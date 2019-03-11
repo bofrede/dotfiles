@@ -1,0 +1,17 @@
+#!/bin/bash
+# Diff the headers and response body of two different urls with curl
+# From https://gist.github.com/thetristan/6169113
+
+NAME=`basename $0`
+COMMAND="diff -s <(curl -sS '$1') <(curl -sS '$2')"
+
+if [ $# -ne 2 ]
+then
+  echo "Usage: $NAME <http://foobar.com> <http://bazqux.com>" 1>&2
+  exit 1
+fi
+
+echo "Comparing '$1' to '$2'..."
+echo $COMMAND
+
+bash -c "$COMMAND"
