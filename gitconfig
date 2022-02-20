@@ -5,6 +5,7 @@
 	status = auto
 	branch = auto
 	diff = auto
+	ui = true
 [core]
 	editor = subl -w
 	pager = less

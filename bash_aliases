@@ -9,6 +9,8 @@ alias witch='echo "which ?"'
 alias headers='curl -s -S --user-agent "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko" -D - -o /dev/null'
 alias obd='minicom -c on -b 38400 -D /dev/cu.OBDII-SPP'
 alias webserver='ruby -run -ehttpd . -p3000'
+alias mc='LANG=en_EN.UTF-8 mc'
+alias open='xdg-open'
 
 # Rails
 alias be='bundle exec'
@@ -22,7 +24,7 @@ alias rr='rake routes'
 alias rc='rails console'
 alias rd='rails destroy'
 alias rg='rails generate'
-alias rs='rails server -b 0.0.0.0'
+alias rs='rails server -b 0.0.0.0 -p 3000'
 alias ttr='touch tmp/restart.txt'
 # View the standard out (puts) from any pow app
 alias powlog='tail -f ~/Library/Logs/Pow/apps/*'

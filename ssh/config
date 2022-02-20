@@ -5,11 +5,10 @@ Host hq
   Hostname hq.bofrede.dk
   RemoteForward 52698 localhost:52698
 
-Host online.digiplay.pro
-  User root
-
-Host 37.139.13.105
-  User root
+Host vagrant
+  Hostname 127.0.0.1
+  Port 2222
+  User vagrant
 
 Host *.example.com
 
@@ -21,5 +20,7 @@ Host *
   IdentityFile ~/.ssh/id_rsa
   ForwardAgent yes
   ServerAliveInterval 100
+  AddKeysToAgent yes
+  UseKeychain yes
 
 # http://linux.die.net/man/5/ssh_config
